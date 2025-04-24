@@ -23,11 +23,12 @@ public class UserController {
     public String showRegistrationForm() {
         return "register";  // 회원가입 폼을 보여주는 view 이름
     }
-
+    
     // 회원가입 처리
     @PostMapping("/register")
     public String registerUser(@ModelAttribute UserDto userDto) {
         userService.registerUser(userDto);
         return "redirect:/login";  // 회원가입 후 로그인 페이지로 리디렉션
     }
+    
 }
