@@ -27,7 +27,7 @@ public class UserService {
     public void registerUser(UserDto userDto) {
         // 비밀번호 암호화
         String encodedPassword = passwordEncoder.encode(userDto.getPassword());
-
+        System.out.println("서비스 수신: " + userDto.getName()); // 이 시점의 이름 확인
         // User 객체 생성 후 DB에 저장
         User user = new User(userDto.getUsername(), encodedPassword, userDto.getEmail(), userDto.getName());
         userRepository.save(user);

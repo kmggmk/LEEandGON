@@ -28,7 +28,7 @@ public class testController {
 
 		if (authentication != null && authentication.isAuthenticated()) {
 			// 이미 인증된 사용자는 /home으로 리디렉션
-			return "redirect:/home";
+			return "redirect:/mai";
 		}
 
 		if (error != null) {

@@ -27,6 +27,7 @@ public class UserController {
     // 회원가입 처리
     @PostMapping("/register")
     public String registerUser(@ModelAttribute UserDto userDto) {
+    	 System.out.println("컨트롤러 수신: " + userDto.getName()); // 이 시점의 이름 확인
         userService.registerUser(userDto);
         return "redirect:/login";  // 회원가입 후 로그인 페이지로 리디렉션
     }
